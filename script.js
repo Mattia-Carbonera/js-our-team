@@ -37,7 +37,19 @@ const teamMembers = [
   },
 ];
 
+// ----------- nodo html -----------
 const cardContainer = document.getElementById("card-container");
+// ----------- form html -----------
+const addButton = document.getElementById("add-button");
+const inputNameEl = document.getElementById("name-imput");
+const inputRoleEl = document.getElementById("role-imput");
+const inputEmailEl = document.getElementById("email-imput");
+const inputImageEl = document.getElementById("img-imput");
+
+console.log(inputNameEl, inputRoleEl, inputEmailEl, inputImageEl);
+
+// ----------- funzione -----------
+let cardHtmlContainer = "";
 
 teamMembers.forEach((members) => {
   // console.log(members);
@@ -47,7 +59,7 @@ teamMembers.forEach((members) => {
 
   // cardContainer.innerHTML = "";
 
-  const htmlCard = `<div class="card-structure col-6 col-md-4 p-2">
+  cardHtmlContainer = `<div class="card-structure col-6 col-md-4 p-2">
           <div class="card" >
             <div class="row g-0">
               <div class="col-md-4">
@@ -69,5 +81,38 @@ teamMembers.forEach((members) => {
         </div>
   `;
 
-  cardContainer.innerHTML += htmlCard;
+  cardContainer.innerHTML += cardHtmlContainer;
+});
+
+// ----------- aggiunta card con form -----------
+
+addButton.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const inputName = inputNameEl.value;
+  const inputRole = inputRoleEl.value;
+  const inputEmail = inputEmailEl.value;
+  const inputImage = inputImageEl.value;
+  console.log(inputName);
+
+  cardContainer.innerHTML += `<div class="card-structure col-6 col-md-4 p-2">
+        <div class="card" >
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="${inputImage}"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body p-2">
+                <h5 class="card-title">${inputName}</h5>
+                <p class="card-text">${inputRole}</p>
+                <p class="">${inputEmail}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
 });
