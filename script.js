@@ -41,6 +41,7 @@ const teamMembers = [
 const cardContainer = document.getElementById("card-container");
 // ----------- form html -----------
 const addButton = document.getElementById("add-button");
+const eventForm = document.getElementById("event-form");
 const inputNameEl = document.getElementById("name-imput");
 const inputRoleEl = document.getElementById("role-imput");
 const inputEmailEl = document.getElementById("email-imput");
@@ -86,7 +87,7 @@ teamMembers.forEach((members) => {
 
 // ----------- aggiunta card con form -----------
 
-addButton.addEventListener("submit", (event) => {
+eventForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const inputName = inputNameEl.value;
@@ -95,12 +96,14 @@ addButton.addEventListener("submit", (event) => {
   const inputImage = inputImageEl.value;
   console.log(inputName);
 
+  // nome immagine per generazione card 'mattia.jpg'
+
   cardContainer.innerHTML += `<div class="card-structure col-6 col-md-4 p-2">
         <div class="card" >
           <div class="row g-0">
             <div class="col-md-4">
               <img
-                src="${inputImage}"
+                src="img/${inputImage}"
                 class="img-fluid rounded-start"
                 alt="..."
               />
