@@ -36,3 +36,32 @@ const teamMembers = [
     img: "img/female3.png",
   },
 ];
+
+const cardContainer = document.getElementById("card-container");
+
+teamMembers.forEach((members) => {
+  // console.log(members);
+
+  let { name, role, email, img } = members;
+  // console.log(name, role, email, img);
+
+  // cardContainer.innerHTML = "";
+
+  const htmlCard = `<div class="card col-md-6 m-2 g-0" style="max-width: 540px">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="${img}" class="img-fluid rounded-start" alt="..." />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">${name}</h5>
+              <p class="card-text">${role}</p>
+              <p class="">${email}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  `;
+
+  cardContainer.innerHTML += htmlCard;
+});
