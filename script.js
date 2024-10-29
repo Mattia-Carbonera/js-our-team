@@ -47,20 +47,26 @@ teamMembers.forEach((members) => {
 
   // cardContainer.innerHTML = "";
 
-  const htmlCard = `<div class="card col-md-6 m-2 g-0" style="max-width: 540px">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="${img}" class="img-fluid rounded-start" alt="..." />
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">${name}</h5>
-              <p class="card-text">${role}</p>
-              <p class="">${email}</p>
+  const htmlCard = `<div class="card-structure col-6 col-md-4 p-2">
+          <div class="card" >
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="${img}"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body p-2">
+                  <h5 class="card-title">${name}</h5>
+                  <p class="card-text">${role}</p>
+                  <p class="">${email}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
   `;
 
   cardContainer.innerHTML += htmlCard;
